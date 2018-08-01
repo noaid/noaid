@@ -1,0 +1,36 @@
+{
+  "name": "noaid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "busboy": "^0.2.14",
+    "chalk": "^2.4.1",
+    "dotenv": "^6.0.0",
+    "http-proxy": "^1.17.0",
+    "ioredis": "^3.2.2",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compress": "^3.0.0",
+    "koa-is-json": "^1.0.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.10",
+    "mime": "^2.3.1",
+    "moment": "^2.22.2",
+    "mongodb": "^3.1.0",
+    "mos-mss": "^0.2.1",
+    "mysql2": "^1.5.3",
+    "nanoid": "^1.0.2",
+    "p-queue": "^2.4.2",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5",
+    "ws": "^6.0.0"
+  }
+}
