@@ -9,17 +9,13 @@ const koaJson = require('koa-json');
 const bodyParser = require('koa-bodyparser');
 const koaRouter = require('./router');
 const Boot = require('./boot');
-const WrapResponse = require('./utils/wrapResponse');
-
+const inject = require('./middleware/inject');
+const exception = require('./middleware/exception');
 const port = process.env.PORT;
 
 const app = new koa();
-app.use(async function(ctx, next) {
-    ctx.app = app;
-    ctx.wrap = new WrapResponse(ctx);
-    await next();
-});
-
+exception(app);
+inject(app);
 app.use(bodyParser());
 app.use(koaJson());
 koaRouter(app);
