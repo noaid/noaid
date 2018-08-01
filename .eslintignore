@@ -1,0 +1,14 @@
+node_modules/**/*.js
+*.json
+dist/**/*.js
+src/lib/npm/**/*.js
+src/lib/wxapp-mobx/**/*.js
+src/lib/wxParse/**/*.js
+babel/*.js
+src/login
+src/utils/uuid.js
+src/utils/WxValidate.js
+src/utils/throttle.js
+src/components/qrCode/index.js
+src/stores/*.js
+src/bitc/**/*.js
