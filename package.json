@@ -14,6 +14,7 @@
     "busboy": "^0.2.14",
     "chalk": "^2.4.1",
     "dotenv": "^6.0.0",
+    "fs-extra": "^6.0.1",
     "http-proxy": "^1.17.0",
     "ioredis": "^3.2.2",
     "koa": "^2.5.1",
@@ -29,11 +30,11 @@
     "mos-mss": "^0.2.1",
     "mysql2": "^1.5.3",
     "nanoid": "^1.0.2",
+    "nunjucks": "^3.1.3",
     "p-queue": "^2.4.2",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5",
-    "ws": "^6.0.0",
-    "fs-extra": "^6.0.1"
+    "ws": "^6.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
