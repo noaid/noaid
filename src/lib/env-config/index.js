@@ -1,7 +1,7 @@
 /**
  * Created by ximing on 2018/8/2.
  */
-'use strict';
+
 const path = require('path');
 
 const defaultConfigDir = `${process.cwd()}/config`;

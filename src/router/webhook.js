@@ -1,7 +1,7 @@
 /**
  * Created by ximing on 2018/7/18.
  */
-'use strict';
+
 const webhook = async function(ctx) {
     const { app, params, wrap } = ctx;
     const { agent } = app;

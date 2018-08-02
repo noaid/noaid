@@ -18,7 +18,7 @@ class WrapResponse {
         return this.base(0, data);
     }
     notFound(msg = 'source not found') {
-        return this.base(code, null, {
+        return this.base(404, null, {
             msg
         });
     }

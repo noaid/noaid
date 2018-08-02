@@ -1,5 +1,5 @@
 module.exports = (app) =>
-    app.use(async function(ctx, next) {
+    app.use(async (ctx, next) => {
         try {
             await next();
         } catch (err) {}

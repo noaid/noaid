@@ -1,7 +1,7 @@
 /**
  * Created by ximing on 2018/7/18.
  */
-'use strict';
+
 const getMock = async function(ctx) {
     ctx.body = { code: 200 };
 };
