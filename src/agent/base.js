@@ -5,5 +5,6 @@ class Base {
     run() {
         throw new Error('This method must be implemented');
     }
+    receive() {}
 }
 module.exports = Base;
