@@ -2,18 +2,21 @@
  * Created by ximing on 2018/8/1.
  */
 'use strict';
-require('dotenv').config();
 const http = require('http');
 const koa = require('koa');
+const path = require('path');
 const koaJson = require('koa-json');
 const bodyParser = require('koa-bodyparser');
 const koaRouter = require('./router');
 const Boot = require('./boot');
 const inject = require('./middleware/inject');
 const exception = require('./middleware/exception');
-const port = process.env.PORT;
-
 const app = new koa();
+const config = require('./lib/env-config').config({
+    configDir: path.join(__dirname, '../', 'config'),
+    pkg: require('../package.json')
+});
+app.config = config;
 exception(app);
 inject(app);
 app.use(bodyParser());
@@ -22,6 +25,6 @@ koaRouter(app);
 new Boot(app);
 const server = http.createServer(app.callback());
 
-server.listen(port, () => {
-    console.log(`listen port is ${port}`);
+server.listen(config.port, () => {
+    console.log(`listen port is ${config.port}`);
 });
