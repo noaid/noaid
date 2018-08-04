@@ -2,17 +2,22 @@ const http = require('http');
 const path = require('path');
 const Agent = require('./agent');
 const mongo = require('./db/mongo');
+const redis = require('./db/redis');
+const user = require('./service/user');
 const logger = require('./utils/logger');
 
-module.exports = class Boot {
-    constructor(app) {
+class Boot {
+    init(app) {
         this.app = app;
         app.agent = new Agent(app);
-        app.mongo = mongo;
-        /*eslint-disable*/
-        global.boot = this;
-        /* eslint-enable */
+        this.mongo = app.mongo = mongo;
     }
+
+    initService() {
+        user.inject(this);
+        this.service = this.app.service = { user };
+    }
+
     listen() {
         const server = http.createServer(this.app.callback());
         server.listen(this.app.config.PORT, () => {
@@ -28,8 +33,11 @@ module.exports = class Boot {
     start() {
         this.config();
         this.app.logger = logger();
+        this.initService();
         mongo.init(this.app).then(
             () => {
+                redis.init(this.app);
+                this.redis = this.app.redis = redis.getClient();
                 this.listen();
             },
             (err) => {
@@ -37,4 +45,5 @@ module.exports = class Boot {
             }
         );
     }
-};
+}
+module.exports = new Boot();

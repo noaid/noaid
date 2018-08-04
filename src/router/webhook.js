@@ -13,5 +13,5 @@ const webhook = async function(ctx) {
     ctx.body = agent.run(agentInstance);
 };
 module.exports.register = function(router, app) {
-    router.all('/u/:uid/webhook/:id/:secret', webhook);
+    router.all('/webhook/u/:uid/a/:id/:secret', webhook);
 };
