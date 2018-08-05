@@ -1,0 +1,13 @@
+{
+  "name": "@noaid/doc",
+  "version": "0.0.1",
+  "dependencies": {
+    
+  },
+  "noaid":{
+    "key":"doc",
+    "logoUrl":"",
+    "name":"文档",
+    "open":"inline"
+  }
+}

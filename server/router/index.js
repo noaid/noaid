@@ -7,12 +7,14 @@ const mock = require('./mock');
 const webhook = require('./webhook');
 const oauth = require('./oauth');
 const home = require('./home');
+const app = require('./app');
 
 const router = new Router();
-mock.register(router);
 webhook.register(router);
-oauth.register(router);
 home.register(router);
+app.register(router);
+mock.register(router);
+oauth.register(router);
 module.exports = function(app) {
     app.use(router.routes()).use(router.allowedMethods());
 };
