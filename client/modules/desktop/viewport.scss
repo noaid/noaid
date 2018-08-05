@@ -1,0 +1,24 @@
+.viewport-container{
+    position: absolute;
+    bottom: $taskbar-height;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.viewport-inner{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    //align-items: flex-start;
+    //align-content: flex-start;
+}
+.app-item{
+    width: 80px;
+    display: block;
+}

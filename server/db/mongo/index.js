@@ -6,7 +6,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 class Mongo {
     createIndex() {
-        // this.noAidDB.collection('agents').createIndex({ connectId: 1 }, {});
+        this.noAidDB.collection('users').createIndex({ email: 1 }, {});
     }
     async init(app) {
         this.client = await MongoClient.connect(

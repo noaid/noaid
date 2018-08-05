@@ -1,0 +1,56 @@
+.taskbar-container{
+    position: absolute;
+    bottom: 0;
+    height: $taskbar-height;
+    left: 0;
+    right: 0;
+    background: #272221a8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .taskbar-left{
+        flex: 1;
+        height: $taskbar-height;
+    }
+    .taskbar-right{
+        height: $taskbar-height;
+        display: flex;
+        align-items: center;
+    }
+    button{
+        background: none;
+        border: none;
+        padding: 0px;
+        cursor: pointer;
+        width: $taskbar-height;
+        height: $taskbar-height;
+        .noaidicon{
+            font-size: 20px;
+            color: $gray-lighter;
+        }
+        &:hover{
+            .noaidicon{
+                color: $primary;
+            }
+            background: rgba($gray-light, 0.05);
+        }
+    }
+}
+.taskbar-datetime{
+    color: $gray-lighter;
+    font-size: 12px;
+    height: $taskbar-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    p{
+        height: 15px;
+    }
+    &:hover{
+        background: rgba($gray-light, 0.05);
+    }
+    padding: 0 10px;
+    user-select: none;
+}
